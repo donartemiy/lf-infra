@@ -1,0 +1,18 @@
+---
+# первичная инициализацию проекта, то есть устанавка ролей
+- name: clone git repositry to roles directory
+  hosts: localhost
+  gather_facts: no
+  tasks:
+    - name: ensure roles directory exists
+      file:
+        path: "roles"
+        # если нет roles, то создать именно дирректорию
+        state: directory
+
+    - name: clone the git repository into the roles 
+      git:
+        repo: 'git@gitlab.com:edu_art/lf-ansible-roles.git'
+        dest: "roles"
+        version: main
+        force: yes
