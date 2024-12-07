@@ -15,4 +15,5 @@
         repo: 'git@gitlab.com:edu_art/lf-ansible-roles.git'
         dest: "roles"
         version: main
+        # перезаписываем любые изменения если в папке roles уже что-то есть.
         force: yes
