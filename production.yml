@@ -1,5 +1,7 @@
 ---
+# Это Ansible Play
 - hosts: db
   roles:
     - { role: 'common' }
-    # - { role: 'swaptrasher' }
+    - { role: 'swaptrasher' }
+    - { role: 'createuser' }
