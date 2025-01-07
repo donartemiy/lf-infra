@@ -1,2 +1,6 @@
 ---
 swap_size: 700MB
+packages:
+  - git
+  - zip
+  - htop

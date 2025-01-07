@@ -2,6 +2,7 @@
 # Это Ansible Play
 - hosts: web
   roles:
-    - { role: 'common' }
     - { role: 'swaptrasher' }
+    - { role: 'common' }
     - { role: 'createuser' }
+    - { role: 'docker' }
