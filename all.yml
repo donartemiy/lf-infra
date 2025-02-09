@@ -1,4 +1,8 @@
 ---
-hosts: all
-roles:
-  - role: common
+# #s1e14. ansible-playbook all.yml
+# Временно. Аналог inventory/.* & groups_vars
+# Ииспользуем исопльзовать файл host с хостами и переменными.
+- hosts: all
+  roles:
+    - role: common
+

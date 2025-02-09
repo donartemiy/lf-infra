@@ -1,3 +1,30 @@
-[all]
-lf-app1 ansible_host=lf-stage.test ansible_user=root
-lf-app2 ansible_host=lf-prod.test ansible_user=root
+# #s1e14. ansible-playbook all.yml -i hosts
+# Временно. Аналог inventory/.* & groups_vars
+# Ииспользуем исопльзовать файл host с хостами и переменными.
+
+[all:children]
+prod
+stage
+
+
+[prod]
+lf-app1 ansible_host=lf-prod.test
+
+[stage]
+lf-app2 ansible_host=lf-stage.test
+
+
+[prod:vars]
+swap_size=1GB
+packages=mc, htop, rsync
+
+[stage:vars]
+swap_size=700MB
+packages=git, zip, htop
+
+
+[db]
+lf-app1 ansible_host=lf-prod.test
+
+[web]
+lf-app2 ansible_host=lf-stage.test
