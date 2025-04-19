@@ -4,3 +4,5 @@ packages:
   - mc
   - htop
   - rsync
+user: bashdays
+region: Russia

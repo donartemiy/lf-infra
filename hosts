@@ -1,6 +1,7 @@
 # #s1e14. ansible-playbook all.yml -i hosts
 # Временно. Аналог inventory/.* & groups_vars
 # Ииспользуем исопльзовать файл host с хостами и переменными.
+# Всё в одном файле, так можно делать, но не нужно
 
 [all:children]
 prod
@@ -8,10 +9,10 @@ stage
 
 
 [prod]
-lf-app1 ansible_host=lf-prod.test
+lf-app1 ansible_host=89.169.150.32
 
 [stage]
-lf-app2 ansible_host=lf-stage.test
+lf-app2 ansible_host=89.169.144.157
 
 
 [prod:vars]
@@ -24,7 +25,7 @@ packages=git, zip, htop
 
 
 [db]
-lf-app1 ansible_host=lf-prod.test
+lf-app1 ansible_host=89.169.150.32
 
 [web]
-lf-app2 ansible_host=lf-stage.test
+lf-app2 ansible_host=89.169.144.157

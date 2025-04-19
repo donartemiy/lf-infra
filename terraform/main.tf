@@ -17,15 +17,16 @@ provider "yandex" {
 
 // ВМ
 resource "yandex_compute_instance" "vm" {
-  count       = 2  # count of VM
+  count       = 1  # count of VM
   name        = "vminstance-${count.index + 1}"
   zone        = "ru-central1-a"
   platform_id = "standard-v1" # тип процессора (Intel Broadwell)
 
+  # https://yandex.cloud/en-ru/docs/compute/concepts/performance-levels
   resources {
-    core_fraction = 5 # Гарантированный % vCPU
+    core_fraction = 20 # Гарантированный % vCPU
     cores         = 2
-    memory        = 1
+    memory        = 2
   }
   scheduling_policy {
     preemptible = true

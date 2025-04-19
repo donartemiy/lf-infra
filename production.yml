@@ -1,8 +1,21 @@
+# Плейбук. Применяем роли к хостам из группы db
 ---
-# Это Ansible Play
 - hosts: db
   roles:
     # - { role: 'swaptrasher' }
     - { role: 'common' }
-    - { role: 'createuser' }
-    - { role: 'docker' }
+    # - { role: 'createuser' }
+    # - { role: 'docker' }
+    - {role: 'docker-compose-from-source'}
+
+
+# production.yml
+#    |
+#    v
+# "hosts: db" → ищет группу db в inventory → находит lf-app1
+#    |
+#    v
+# на lf-app1 запускается роль swaptrasher
+#    |
+#    v
+# если есть group_vars/db.yml → берутся переменные оттуда
