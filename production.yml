@@ -2,11 +2,11 @@
 ---
 - hosts: db
   roles:
-    # - { role: 'swaptrasher' }
-    - { role: 'common' }
     # - { role: 'createuser' }
+    - { role: 'common' }
     # - { role: 'docker' }
     - {role: 'docker-compose-from-source'}
+    - { role: 'swaptrasher' }
 
 
 # production.yml

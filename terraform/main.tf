@@ -24,9 +24,9 @@ resource "yandex_compute_instance" "vm" {
 
   # https://yandex.cloud/en-ru/docs/compute/concepts/performance-levels
   resources {
-    core_fraction = 20 # Гарантированный % vCPU
-    cores         = 2
-    memory        = 2
+    core_fraction = 100 # Гарантированный % vCPU
+    cores         = 4
+    memory        = 4
   }
   scheduling_policy {
     preemptible = true
