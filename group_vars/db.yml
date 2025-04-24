@@ -6,3 +6,4 @@ packages:
   - rsync
 user: bashdays
 region: Russia
+nginx_worker_connections: 1024

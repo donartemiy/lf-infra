@@ -1,6 +1,5 @@
 # Just creating VMs
-# terraform apply
-# terraform destroy
+# cd ~/linuxfactory/infra/terraform && terraform apply --auto-approve
 terraform {
   required_providers {
     yandex = {
@@ -20,13 +19,16 @@ resource "yandex_compute_instance" "vm" {
   count       = 1  # count of VM
   name        = "vminstance-${count.index + 1}"
   zone        = "ru-central1-a"
-  platform_id = "standard-v1" # тип процессора (Intel Broadwell)
+  platform_id = "standard-v3" # тип процессора (Intel Broadwell)
 
   # https://yandex.cloud/en-ru/docs/compute/concepts/performance-levels
   resources {
-    core_fraction = 100 # Гарантированный % vCPU
+    core_fraction = 50 # Гарантированный % vCPU
     cores         = 4
     memory        = 4
+    # core_fraction = 20 # Гарантированный % vCPU
+    # cores         = 2
+    # memory        = 2
   }
   scheduling_policy {
     preemptible = true

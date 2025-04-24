@@ -3,10 +3,11 @@
 - hosts: db
   roles:
     # - { role: 'createuser' }
-    - { role: 'common' }
-    # - { role: 'docker' }
-    - {role: 'docker-compose-from-source'}
-    - { role: 'swaptrasher' }
+    # - { role: 'common' }
+    ## - { role: 'docker' }
+    # - { role: 'docker-compose-from-source' }
+    ## - { role: 'swaptrasher' }
+    - { role: 'nginx' }
 
 
 # production.yml
