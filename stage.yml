@@ -1,8 +1,16 @@
 ---
 # Это Ansible Play
+# - hosts: web
+#   remote_user: root
+#   roles:
+#     # Роль блокирует подключение чере root
+#     - { role: 'createuser' }
+
+
 - hosts: web
   roles:
-    - { role: 'swaptrasher' }
     # - { role: 'common' }
-    # - { role: 'createuser' }
     # - { role: 'docker' }
+    # - { role: 'docker-compose-from-source' }
+    # - { role: 'nginx' }
+    - { role: 'runner' }

@@ -1,4 +1,5 @@
 ---
+# production
 swap_size: 1GB
 packages: 
   - mc
@@ -7,3 +8,16 @@ packages:
 user: bashdays
 region: Russia
 nginx_worker_connections: 1024
+
+# ------------ role 'runner' ------------
+# gitlab_runner_description: Docker runner socket1
+# gitlab_runner_tags: 
+#   - lf-runner1
+#   - lf-runner
+# gitlab_runner_executor: docker
+
+gitlab_runner_description: Shell runner 1
+gitlab_runner_tags: 
+  - lf-runner-shell1
+  - lf-runner-shell
+gitlab_runner_executor: shell

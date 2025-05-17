@@ -1,6 +1,21 @@
 ---
+# stage
 swap_size: 700MB
 packages:
   - git
   - zip
   - htop
+
+# ------------ role 'runner' ------------
+# gitlab_runner_description: Docker runner socket2
+# gitlab_runner_tags: 
+#   - lf-runner2
+#   - lf-runner
+# gitlab_runner_executor: docker
+
+
+gitlab_runner_description: Shell runner 2
+gitlab_runner_tags: 
+  - lf-runner-shell2
+  - lf-runner-shell
+gitlab_runner_executor: shell
