@@ -12,5 +12,5 @@
     # - { role: 'common' }
     # - { role: 'docker' }
     # - { role: 'docker-compose-from-source' }
-    # - { role: 'nginx' }
-    - { role: 'runner' }
+    - { role: 'nginx' }
+    # - { role: 'runner' }

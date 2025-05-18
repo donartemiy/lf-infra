@@ -16,7 +16,7 @@ provider "yandex" {
 
 // ВМ
 resource "yandex_compute_instance" "vm" {
-  count       = 1  # count of VM
+  count       = 2  # count of VM
   name        = "vminstance-${count.index + 1}"
   zone        = "ru-central1-a"
   platform_id = "standard-v3" # тип процессора (Intel Broadwell)
@@ -27,11 +27,11 @@ resource "yandex_compute_instance" "vm" {
     # cores         = 4
     # memory        = 4
     core_fraction = 20 # Гарантированный % vCPU
-    cores         = 2
-    memory        = 1
+    cores         = 4
+    memory        = 4
     # core_fraction = 20 # Гарантированный % vCPU
-    # cores         = 4
-    # memory        = 4
+    # cores         = 2
+    # memory        = 1
   }
   scheduling_policy {
     preemptible = true
